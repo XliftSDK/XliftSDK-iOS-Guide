@@ -6,6 +6,8 @@
     * [インフィード広告のロード](#infeed/load)
     * [インフィード広告の表示](#infeed/display)
     * [インフィード広告のクリック時の遷移処理](#infeed/click)
+* [Swiftで実装](#swift)
+
 
 <a name="setting"></a>
 ## インフィード広告用のメディア設定
@@ -21,7 +23,11 @@ Podfileに下記を追加
 ```
 pod 'XliftSDK', '= 1.0.b1'
 ```
-
+インストール実行
+```
+$ pod setup
+$ pod install
+```
 
 <a name="infeed/load"></a>
 ## インフィード広告のロード
@@ -30,7 +36,7 @@ pod 'XliftSDK', '= 1.0.b1'
 //(1) ヘッダーをインポート
 #import <Xlift/XliftInfeedAd.h>
 #import <Xlift/XliftInfeedAdLoader.h>
-#import <Xlift/XliftInfeedAdDelegate.h>
+#import <Xlift/XliftInfeedAdLoaderDelegate.h>
 
 @interface SampleViewController()<XliftInfeedAdLoaderDelegate>
 //(2) プロパティを定義
@@ -98,3 +104,8 @@ pod 'XliftSDK', '= 1.0.b1'
 }];
 
 ```
+
+<a name="swift"></a>
+## Swiftでの実装
+ブリッジヘッダファイルが必要です。
+[サンプルプロジェクト](https://github.com/XliftSDK/XliftSDK-iOS-Guide/tree/master/SwiftExample/XliftSDKSwiftExampleInfeed)の [XliftSDK-Bridge-Header.h](https://github.com/XliftSDK/XliftSDK-iOS-Guide/blob/master/SwiftExample/XliftSDKSwiftExampleInfeed/XliftSDKSwiftExampleInfeed/XliftSDK-Bridge-Header.h)を参考にして下さい。
